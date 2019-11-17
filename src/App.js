@@ -6,6 +6,7 @@ import Details from "./Details";
 import ThemeContext from "./ThemeContext";
 
 import "babel-polyfill";
+import NavBar from "./NavBar";
 
 const App = () => {
   const themeHook = useState("peru");
@@ -13,10 +14,9 @@ const App = () => {
   return (
     <React.StrictMode>
       <ThemeContext.Provider value={themeHook}>
+        {console.log(themeHook)}
         <div>
-          <header>
-            <Link to="/"> Adopt Me </Link>
-          </header>
+          <NavBar />
           <Router>
             <SearchParams path="/" />
             <Details path="/details/:id" />
